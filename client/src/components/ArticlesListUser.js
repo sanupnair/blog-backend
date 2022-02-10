@@ -15,7 +15,7 @@ const ArticlesListUser = () => {
         axios.get("http://localhost:3005/api/view")
             .then((response) => {
                 console.log(response.data);
-                SetData(Data = response.data);
+                SetData(Data = Array.from (response.data));
             }
             )
     }

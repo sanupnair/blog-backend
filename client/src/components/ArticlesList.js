@@ -15,7 +15,7 @@ const ArticlesList = () => {
         axios.get("/view")
             .then((response) => {
                 console.log(response.data);
-                SetData(Data = response.data);
+                SetData(Data = Array.from (response.data));
             }
             )
     }
