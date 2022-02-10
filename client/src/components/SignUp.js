@@ -33,7 +33,7 @@ const SignUp = () => {
         if (Object.keys(formErrorValues).length === 0 && isSubmit) {
            addUsers();
         }
-    }, [formerrorValues]);
+    }, [formErrorValues]);
 
    // var [myvalue, setmyValue] = MyForm({ username: "", email: "", password: "" })
     const addUsers = () => {
