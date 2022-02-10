@@ -12,7 +12,7 @@ const ArticlesList = () => {
     }, []);
 
     function articleData() {
-        axios.get("http://localhost:3005/api/view")
+        axios.get("/view")
             .then((response) => {
                 console.log(response.data);
                 SetData(Data = response.data);
@@ -22,17 +22,17 @@ const ArticlesList = () => {
     function updateArticle(event) {
         var id = event.target.getAttribute("name");
         console.log("in update", id)
-        var s = `../updatearticle/${id}`;
+        var s = `/updatearticle/${id}`;
         console.log(s)
         navigate(s, { replace: true })
     }
     function deleteArticle(event) {
         console.log(event.target.getAttribute("name"))
-        axios.post("http://localhost:3005/api/delete", { title: event.target.getAttribute("name") })
+        axios.post("/delete", { title: event.target.getAttribute("name") })
             .then((res) => {
                 alert("Successfully Deleted");
 
-                navigate("../", { replace: true })
+                navigate("/", { replace: true })
 
             }
             )

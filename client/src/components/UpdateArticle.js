@@ -19,7 +19,7 @@ const UpdateArticle = (props) => {
     }, []);
 
     function articleData() {
-        axios.get("http://localhost:3005/api/view")
+        axios.get("/view")
             .then((response) => {
                 //console.log(response.data);
                 setSingleArticle(singleArticle = response.data.find(i => i._id === id));
@@ -38,11 +38,11 @@ const UpdateArticle = (props) => {
     function updateArticle() {
        
             
-            axios.post("http://localhost:3005/api/update",  singleArticle )
+            axios.post("/update",  singleArticle )
                 .then((res) => {
                     alert("Successfully Updated");
                     
-                    navigate("../articlelist", { replace: true })
+                    navigate("/articlelist", { replace: true })
                    
                 }
                 )

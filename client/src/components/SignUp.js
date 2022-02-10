@@ -63,7 +63,7 @@ const SignUp = () => {
                 <label for="password">Password</label>
                 <input onChange={handleChange} type="password" placeholder="Password" id="password" name="password" value={formValues.password} />
                 <span className='error'>{formErrorValues.password}</span>
-                <button>Sign Up</button>
+                <button type='submit'>Sign Up</button>
             
         </form>
     </>
