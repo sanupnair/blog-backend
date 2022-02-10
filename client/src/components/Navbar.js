@@ -29,7 +29,7 @@ const Navbar = (props) => {
           {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
         </NavMenu>
         <NavBtn>
-          <NavBtnLink to='/signin' onClick={props.setlogout(1)}>Sign Out</NavBtnLink>
+          <NavBtnLink to='/signin' onClick={props.setlogout()}>Sign Out</NavBtnLink>
         </NavBtn>
       </Nav>
     </>
