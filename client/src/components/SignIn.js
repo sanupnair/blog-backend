@@ -40,12 +40,12 @@ const SignIn = (props) => {
         ("Admin"===formValues.username && "12345"===formValues.password)?admin=1:flag2=0
     ))
     if (admin===1)
-    {navigate("../", { replace: true })
+    {navigate("/", { replace: true })
         props.setlogin(2)
     }
     else if (flag1===1)
     {
-        navigate("../", { replace: true })
+        navigate("/", { replace: true })
         props.setlogin(1)
     }
     
@@ -54,7 +54,7 @@ const SignIn = (props) => {
     }
 
     const clicked = (event) => {
-        navigate("/api/signup", { replace: true })
+        navigate("/signup", { replace: true })
     }
     return (
         <>

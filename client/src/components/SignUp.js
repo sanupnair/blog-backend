@@ -41,7 +41,7 @@ const SignUp = () => {
         axios.post("/signup", formValues).then(
             (res) => {
                 alert("Successfully Created Account!!!Now you can login using registered username and password.")
-                navigate("../signin", { replace: true })
+                navigate("/signin", { replace: true })
                 console.log("in axios post" + res.data)
 
             }

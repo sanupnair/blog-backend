@@ -10,7 +10,7 @@ const AddArticle = () => {
     var [myvalue, setmyValue] = MyForm({ username: "", title: "", content: "" })
     const addArticles = () => {
         console.log(myvalue)
-        axios.post("http://localhost:3005/api/add", myvalue).then(
+        axios.post("/add", myvalue).then(
             (res) => {
                 alert("Successfully Added Article")
                 navigate(window.location("/ArticlesListPage"), { replace: true })
