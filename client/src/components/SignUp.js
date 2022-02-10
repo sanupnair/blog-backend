@@ -38,7 +38,7 @@ const SignUp = () => {
    // var [myvalue, setmyValue] = MyForm({ username: "", email: "", password: "" })
     const addUsers = () => {
         console.log(formValues)
-        axios.post("/api/signup", formValues).then(
+        axios.post("/signup", formValues).then(
             (res) => {
                 alert("Successfully Created Account!!!Now you can login using registered username and password.")
                 navigate("../signin", { replace: true })
