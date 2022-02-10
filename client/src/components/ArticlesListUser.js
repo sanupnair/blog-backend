@@ -15,7 +15,7 @@ const ArticlesListUser = () => {
         axios.get("/view")
             .then((response) => {
                 console.log(response.data);
-                SetData(Data = (response.data));
+                SetData(Data = response.data);
             }
             )
     }
@@ -24,7 +24,7 @@ const ArticlesListUser = () => {
     return (
         <>
 
-            {Data.article.map((article, key) => (
+            {Data.map((article, key) => (
                 <div className='articlelist'>
                     <Link  className="l" key={key} to={`/articlelist/${article._id}`}>
 
