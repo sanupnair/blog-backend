@@ -24,7 +24,7 @@ const SignIn = (props) => {
         axios.get("/api/login")
             .then((response) => {
                 console.log("in logindata",response.data);
-                SetLogin(login = response.data);
+                SetLogin(login = Array.from (response.data));
             }
             )
     }
@@ -33,14 +33,14 @@ const SignIn = (props) => {
         let flag1=0
         let flag2=0
         let admin=0
-    login.map(([x, key]) => (
+    login.map((x, key) => (
         (x.username===formValues.username && x.password===formValues.password)?flag1=1:flag2=0
     ))
-    login.map(([x, key]) => (
+    login.map((x, key) => (
         ("Admin"===formValues.username && "12345"===formValues.password)?admin=1:flag2=0
     ))
     if (admin===1)
-    {navigate("/articlelist", { replace: true })
+    {navigate("/", { replace: true })
         props.setlogin(2)
     }
     else if (flag1===1)
