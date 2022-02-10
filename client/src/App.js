@@ -41,9 +41,9 @@ function App() {
         <div className="App">
         <Navbarsmall setlogout={setlogout}/>
           <Routes>
-            <Route path="/" element={<Homepage />} exact></Route>
-            <Route path="/signup" element={<SignUp />} ></Route>
-            <Route path="/signin" element={<SignIn  setlogin={setlogin}/>} ></Route>
+            <Route path="/api/" element={<Homepage />} exact></Route>
+            <Route path="/api/signup" element={<SignUp />} ></Route>
+            <Route path="/api/signin" element={<SignIn  setlogin={setlogin}/>} ></Route>
           </Routes>
           
         </div>
@@ -58,12 +58,12 @@ function App() {
           <div className="App">
           <Navbaruser setlogout={setlogout}/>
             <Routes>
-              <Route path="/" element={<Homepage />} exact></Route>
+              <Route path="/api/" element={<Homepage />} exact></Route>
               
-              <Route path="/articlelist" element={<ArticlesListPageUser />} ></Route>
-              <Route path="/articlelist/:id" element={<Articlepage />} ></Route>
+              <Route path="/api/articlelist" element={<ArticlesListPageUser />} ></Route>
+              <Route path="/api/articlelist/:id" element={<Articlepage />} ></Route>
               
-              <Route path="/signin" element={<SignIn  setlogin={setlogin}/>} ></Route>
+              <Route path="/api/signin" element={<SignIn  setlogin={setlogin}/>} ></Route>
               
               
             </Routes>
@@ -82,13 +82,13 @@ function App() {
           <div className="App">
           <Navbar setlogout={setlogout}/>
             <Routes>
-              <Route path="/" element={<Homepage />} exact></Route>
-              <Route path="/updatearticle/:id" element={<UpdateArticle />} ></Route>
-              <Route path="/articlelist" element={<Articlelistpage />} ></Route>
-              <Route path="/articlelist/:id" element={<Articlepage />} ></Route>
+              <Route path="/api/" element={<Homepage />} exact></Route>
+              <Route path="/api/updatearticle/:id" element={<UpdateArticle />} ></Route>
+              <Route path="/api/articlelist" element={<Articlelistpage />} ></Route>
+              <Route path="/api/articlelist/:id" element={<Articlepage />} ></Route>
               
-              <Route path="/signin" element={<SignIn  setlogin={setlogin}/>} ></Route>
-              <Route path="/add" element={<AddArticle />} ></Route>
+              <Route path="/api/signin" element={<SignIn  setlogin={setlogin}/>} ></Route>
+              <Route path="/api/add" element={<AddArticle />} ></Route>
               
             </Routes>
             
