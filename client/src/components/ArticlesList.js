@@ -41,7 +41,7 @@ const ArticlesList = () => {
     return (
         <>
 
-            {Data.map((article, key) => (
+            {Data.article.map((article, key) => (
                 <div className='articlelist'>
                     <Link  className="l" key={key} to={`/articlelist/${article._id}`}>
 
