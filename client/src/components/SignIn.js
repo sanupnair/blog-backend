@@ -21,7 +21,7 @@ const SignIn = (props) => {
     }, []);
 
     function loginData() {
-        axios.get("http://localhost:3005/api/login")
+        axios.get("/api/login")
             .then((response) => {
                 console.log("in logindata",response.data);
                 SetLogin(login = response.data);
@@ -54,7 +54,7 @@ const SignIn = (props) => {
     }
 
     const clicked = (event) => {
-        navigate("../signup", { replace: true })
+        navigate("/api/signup", { replace: true })
     }
     return (
         <>
