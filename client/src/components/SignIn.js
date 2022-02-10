@@ -21,7 +21,7 @@ const SignIn = (props) => {
     }, []);
 
     function loginData() {
-        axios.get("/api/login")
+        axios.get("/login")
             .then((response) => {
                 console.log("in logindata",response.data);
                 SetLogin(login = Array.from (response.data));

@@ -9,13 +9,13 @@ const ArticlesList = () => {
     let [Data, SetData] = useState([]);
     useEffect(() => {
         articleData();
-    }, []);
+    });
 
     function articleData() {
         axios.get("/view")
             .then((response) => {
                 console.log(response.data);
-                SetData(Data = Array.from (response.data));
+                SetData(Data = (response.data));
             }
             )
     }

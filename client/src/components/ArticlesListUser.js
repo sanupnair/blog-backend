@@ -12,10 +12,10 @@ const ArticlesListUser = () => {
     }, []);
 
     function articleData() {
-        axios.get("http://localhost:3005/api/view")
+        axios.get("/view")
             .then((response) => {
                 console.log(response.data);
-                SetData(Data = Array.from (response.data));
+                SetData(Data = (response.data));
             }
             )
     }
