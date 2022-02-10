@@ -13,10 +13,10 @@ const PORT = process.env.PORT || 3005;
 const path = require("path");
 
 // Step 1:
-app.use(express.static(path.resolve(__dirname, "./client/build")));
+app.use(express.static(path.resolve(__dirname, "client", "build")));
 // Step 2:
-app.get("*", function (request, response) {
-  response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
 app.use(cors())
@@ -111,6 +111,6 @@ app.get('/api/login', async (req, res) => {
     }
 });
 
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
+app.listen(PORT, () => {
+    console.log(`Example app listening at http://localhost:${PORT}`);
 });
