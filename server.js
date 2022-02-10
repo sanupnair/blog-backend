@@ -9,15 +9,7 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3005;
 
-// Accessing the path module
-const path = require("path");
 
-// Step 1:
-app.use(express.static(path.resolve(__dirname, "client", "build")));
-// Step 2:
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-});
 
 app.use(cors())
 app.use(function(req,res,next){
@@ -109,6 +101,16 @@ app.get('/api/login', async (req, res) => {
     catch (err) {
         console.log(err);
     }
+});
+
+// Accessing the path module
+const path = require("path");
+
+// Step 1:
+app.use(express.static(path.resolve(__dirname, "client", "build")));
+// Step 2:
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
 app.listen(PORT, () => {
