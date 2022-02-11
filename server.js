@@ -27,7 +27,7 @@ app.use(bodyparser.json());
 require("dotenv").config()
 
     mongoose.connect(
-         process.env.MONGODB_CONNECTION_STRING,
+        "mongodb+srv://nair7229:Admin1346@cluster0.hcabz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
              {
                useNewUrlParser: true,
                useUnifiedTopology: true,
@@ -36,7 +36,7 @@ require("dotenv").config()
      .then(() => console.log("MongoDB has been connected"))
      .catch((err) => console.log(err));
 
-app.post('/add', async (req, res) => {
+app.post('/api/add', async (req, res) => {
     try {
         console.log(req.body);
         let mydata = new articleModelObj(req.body);
@@ -49,7 +49,7 @@ app.post('/add', async (req, res) => {
     }
 });
 
-app.get('/view', async (req, res) => {
+app.get('/api/view', async (req, res) => {
     try {
         let result = await articleModelObj.find();
         res.json(result);
@@ -58,7 +58,7 @@ app.get('/view', async (req, res) => {
         console.log(err);
     }
 });
-app.post('/delete', async (req, res) => {
+app.post('/api/delete', async (req, res) => {
     try {
         let result = await articleModelObj.deleteOne({title:req.body.title});
         console.log("Successfully Deleted Article : "+req.body.title);
@@ -69,7 +69,7 @@ app.post('/delete', async (req, res) => {
     }
 });
 
-app.post('/update', async (req, res) => {
+app.post('/api/update', async (req, res) => {
     try {
      console.log(req.body);
         let result = await articleModelObj.updateOne({title:req.body.title},{$set:{content:req.body.content}});
@@ -81,7 +81,7 @@ app.post('/update', async (req, res) => {
     }
 });
 
-app.post('/signup', async (req, res) => {
+app.post('/api/signup', async (req, res) => {
     try {
         console.log(req.body);
         let mydata = new userModelObj(req.body);
@@ -93,7 +93,7 @@ app.post('/signup', async (req, res) => {
     }
 });
 
-app.get('/login', async (req, res) => {
+app.get('/api/login', async (req, res) => {
     try {
         let result = await userModelObj.find();
         res.json(result);
@@ -114,5 +114,5 @@ app.get("*", (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Example app listening at ${PORT}`);
+    console.log(`Example app listening at http://localhost:${PORT}`);
 });
