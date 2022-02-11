@@ -38,10 +38,10 @@ const SignUp = () => {
    // var [myvalue, setmyValue] = MyForm({ username: "", email: "", password: "" })
     const addUsers = () => {
         console.log(formValues)
-        axios.post("http://localhost:3005/signup", formValues).then(
+        axios.post("/signup", formValues).then(
             (res) => {
                 alert("Successfully Created Account!!!Now you can login using registered username and password.")
-                navigate("http://localhost:3005/signin", { replace: true })
+                navigate("/signin", { replace: true })
                 console.log("in axios post" + res.data)
 
             }
