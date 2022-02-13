@@ -27,14 +27,14 @@ app.use(bodyparser.json());
 require("dotenv").config()
 
     mongoose.connect(
-        "mongodb+srv://nair7229:Admin1346@cluster0.hcabz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-             {
-               useNewUrlParser: true,
-               useUnifiedTopology: true,
-             }
-     )
-     .then(() => console.log("MongoDB has been connected"))
-     .catch((err) => console.log(err));
+        "mongodb+srv://nair7229:Admin1346@cluster0.hcabz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+    //          {
+    //            useNewUrlParser: true,
+    //            useUnifiedTopology: true,
+    //          }
+    //  )
+    //  .then(() => console.log("MongoDB has been connected"))
+    //  .catch((err) => console.log(err));
 
 app.post('/api/add', async (req, res) => {
     try {

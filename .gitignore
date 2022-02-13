@@ -4,3 +4,4 @@
 .ides/
 .vscode/
 node_modules
+.env
